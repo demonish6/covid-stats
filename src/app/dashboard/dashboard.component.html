@@ -1,0 +1,224 @@
+<nav class="navbar navbar-expand-lg bg-transparent">
+    <h3 class="navbar-brand pt-2">COVID-19 Stats</h3>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/insight" routerLinkActive="active">News & Insights</a>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid mobile-none">
+    <div class="spacer-50"></div>
+    <div class="row">
+        <div class="col-4 text-center">
+            <h6>Helpline Number :+91-11-23978046</h6>
+        </div>
+        <div class="col-4 text-center">
+            <h6> Toll Free : 1075 </h6>
+        </div>
+        <div class="col-4 text-center">
+            <h6>
+                Helpline Email ID : ncov2019@gov.in
+            </h6>
+        </div>
+    </div>
+</div>
+<div class="spacer-50"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h6>COVID-19 Global Stats</h6>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card w-100 global">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 confirmed">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Confirmed Cases
+                                            </div>
+                                            <div class="card-text">{{globalConfirmed}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 recovered">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Recovered Cases
+                                            </div>
+                                            <div class="card-text">{{globalRecovered}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 critical">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Critical Cases
+                                            </div>
+                                            <div class="card-text">{{globalCritical}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 deaths">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Deaths
+                                            </div>
+                                            <div class="card-text">{{globalDeaths}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacer-50"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h6>COVID-19 India Stats</h6>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card w-100 global">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 confirmed">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Confirmed Cases
+                                            </div>
+                                            <div class="card-text">{{countryConfirmed}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 recovered">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Recovered Cases
+                                            </div>
+                                            <div class="card-text">{{countryRecovered}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 critical">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Migrated Cases
+                                            </div>
+                                            <div class="card-text">{{countryMigrated}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="card w-100 deaths">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                Total Deaths
+                                            </div>
+                                            <div class="card-text">{{countryDeaths}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacer-50"></div>
+
+<div class="container-fluid switcher">
+    <small class="text-muted mobile-help text-center mb-2">Switch to change view.</small>
+    <div class="row switcherRow">
+        <div class="col-1 mr-0 text-center labelTable">
+            <label for="" class="pr-2 pt-1">Table</label>
+        </div>
+        <div class="col-1-2 text-center pl-0 pr-0">
+            <label class="switch">
+                <input type="checkbox" (change)="switcher()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="col-1 ml-0 text-center labelChart">
+            <label for="" class="pl-2 pt-1">Graph</label>
+        </div>
+        <div class="col-4 help">
+            <label class="text-muted pt-1">*Toggle the switch to view data in Tabular and Graphical format</label>
+        </div>
+    </div>
+
+</div>
+
+<div class="spacer-50"></div>
+
+<div class="container-fluid" [hidden]="!switchView" id="contentTable">
+    <div class="row">
+        <div class="col-12">
+            <h6>State-Wise Stats (Table)</h6>
+            <div class="card global">
+                <div class="card-body">
+                    <div class="table-responsive-xl">
+                        <table class="table table-hover w-100 mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">State</th>
+                                    <th scope="col">Cases</th>
+                                    <th scope="col">Recoverd</th>
+                                    <th scope="col">Deaths</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let items of stateData">
+                                    <td>{{items['name']}}</td>
+                                    <td>{{items['active']}}</td>
+                                    <td>{{items['recovered']}}</td>
+                                    <td>{{items['deaths']}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" [hidden]="switchView" id="contentChart">
+    <div class="row">
+        <div class="col-12">
+            <h6>State-Wise Stats (Graph)</h6>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <div class="card global">
+                <div class="card-body">
+                    <p-chart type="line" [data]="chartData" [responsive]="true" height="100vh"></p-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <footer>Developed by Monish De. *Data updated every 15 minutes. *News can be outdated as I am using a free version of the API.</footer>
+</div>

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-transparent">
+    <h3 class="navbar-brand pt-2">COVID-19 Stats</h3>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/news" routerLinkActive="active">News & Insights<span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+</nav>
+<div class="spacer-50"></div>
+
+<div class="container-fluid">
+    <h2>State News & Insights</h2>
+    <div class="row mb-2" *ngFor="let items of stateNews; let i = index">
+        <div class="col-12">
+            <div class="card w-100 global">
+                <div class="card-body">
+                    <div class="card-title font-weight-bold">{{items['name']}}</div>
+                    <p>{{items['notes']}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h2>Global News & Insights.</h2>
+    <div class="row mb-2" *ngFor="let news of newsList; let i = index">
+        <div class="col-12">
+            <div class="card w-100 global">
+                <div class="card-body">
+                    <div class="card-title font-weight-bold">{{news['title']}}</div>
+                    <small>{{getDate(i)}}</small>
+                    <p>{{news['description']}}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <a [href]="getLink(i)" target="blank" class="btn btn-primary">Full Article</a>
+                        </div>
+                        <div class="col-6 align-items-center" style="text-align: end;">
+                            <small class="text-muted">Source : {{news['source']['name']}}</small>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <footer>Developed by Monish De. *Data updated every 15 minutes. *News can be outdated as I am using a free version of the API.</footer>
+</div>

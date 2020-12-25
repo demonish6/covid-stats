@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.align-items-center {
+    display: block;
+    align-items: center;
+    /*Aligns vertically center */
+    justify-content: center;
+    /*Aligns horizontally center */
+}
+
+body {
+    background-color: rgb(29, 28, 28);
+    color: whitesmoke;
+}
+
+.card {
+    background-color: #383333;
+}
